@@ -22,11 +22,10 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentDto> getAllStudents() {
         List<Student> students = studentRepository.findAll();
 
-        list<StudentDto> studentDtoList = students
+        return students
                 .stream()
                 .map( student -> new StudentDto(student.getId(), student.getName(), student.getEmail()))
                 .toList();
 
-        return List.of();
     }
 }
